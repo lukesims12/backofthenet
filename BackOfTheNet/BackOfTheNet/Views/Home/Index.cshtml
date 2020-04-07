@@ -1,0 +1,20 @@
+﻿@model BackOfTheNet.Models.Team[]
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Teams - <small>Premier League</small></h2>
+
+<div class="row">
+    @foreach (var team in Model) { 
+        <div class="col-md-3">
+            <div class="well">
+                <p><label>Name:</label> @team.TeamName (@team.ShortTeamName)</p>
+                <p><label>League:</label> @team.League</p>
+                <p><label>Stadium:</label> @team.Stadium</p>
+                <p><label>Favorite:</label> @(team.IsFavourite ? "Yes" : "No")</p>
+            </div>
+        </div>    
+    }
+</div>
